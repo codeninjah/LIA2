@@ -38,8 +38,9 @@ namespace LIA.Admin
             //services.AddScoped<IVideoContext>(provider => new VideoContext(new DbContextOptions<VideoContext>()));
             //services.AddTransient<IVideoContext, VideoContext>();
             services.AddTransient<IDbReader, DbReader>();
+			services.AddTransient<IDbWriter, DbWriter>();
 
-            services.AddMvc()
+			services.AddMvc()
                 .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AuthorizeFolder("/Account/Manage");
