@@ -18,5 +18,10 @@ namespace LIA.Data.Services
         {
             return _db.Set<TEntity>();
         }
+
+		public async Task<TEntity> Get<TEntity>(int id) where TEntity : class
+		{
+			return await _db.FindAsync<TEntity>(id);
+		}
     }
 }
