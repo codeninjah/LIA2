@@ -7,13 +7,13 @@ using LIA2Version3.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace LIA.Admin.Pages.Items
+namespace LIA.Admin.Pages.ListItems
 {
 	public class IndexModel : PageModel
 	{
 		//public string text;
 		IDbReader _db;
-		public IList<Item> Item { get; set; }
+		public IList<ListItem> ListItem { get; set; }
 
 
 		public IndexModel(IDbReader db)
@@ -24,7 +24,7 @@ namespace LIA.Admin.Pages.Items
 
 		public void OnGet()
 		{
-			Item = _db.Get<Item>().ToList();
+			ListItem = _db.Get<ListItem>().ToList();
 		}
 	}
 }
