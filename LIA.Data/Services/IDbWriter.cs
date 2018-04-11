@@ -9,5 +9,6 @@ namespace LIA.Data.Services
     {
 		Task<bool> AddAsync<TEntity>(TEntity item) where TEntity : class;
 		Task<bool> Remove<TEntity>(TEntity item) where TEntity : class;
+		Task<bool> UpdateAsync<TEntity>(TEntity item) where TEntity : class;
 	}
 }

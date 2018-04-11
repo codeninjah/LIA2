@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using LIA.Data.Data;
 using LIA2Version3.Data.Entities;
 
-namespace LIA.Admin.Pages.ItemTypes
+namespace LIA.Admin.Pages.Items
 {
 	public class EditModel : PageModel
 	{
@@ -23,7 +23,7 @@ namespace LIA.Admin.Pages.ItemTypes
 		}
 
 		[BindProperty]
-		public ItemType ItemType { get; set; }
+		public Item Item { get; set; }
 
 		public async Task<IActionResult> OnGetAsync(int? id)
 		{
@@ -32,9 +32,9 @@ namespace LIA.Admin.Pages.ItemTypes
 				return NotFound();
 			}
 
-			ItemType = await _reader.Get<ItemType>((int)id);
+			Item = await _reader.Get<Item>((int)id);
 
-			if (ItemType == null)
+			if (Item == null)
 			{
 				return NotFound();
 			}
@@ -50,7 +50,7 @@ namespace LIA.Admin.Pages.ItemTypes
 
 			try
 			{
-				await _writer.UpdateAsync(ItemType);
+				await _writer.UpdateAsync(Item);
 				//await _context.SaveChangesAsync();
 			}
 			catch (DbUpdateConcurrencyException)
@@ -61,7 +61,7 @@ namespace LIA.Admin.Pages.ItemTypes
 				//}
 				//else
 				//{
-					throw;
+				throw;
 				//}
 			}
 
