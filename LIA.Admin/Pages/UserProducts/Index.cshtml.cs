@@ -24,7 +24,8 @@ namespace LIA.Admin.Pages.UserProducts
 
 		public void OnGet()
 		{
-			UserProduct = _db.Get<UserProduct>().ToList();
+			UserProduct = _db.GetWithIncludes<UserProduct>().ToList();
+
 		}
 	}
 }

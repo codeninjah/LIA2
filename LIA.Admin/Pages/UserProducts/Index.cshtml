@@ -7,9 +7,6 @@
 
 <h2>Test</h2>
 
-@*public int ProductId { get; set; }
-		public string UserId { get; set; }*@
-
 <p>
 	<a asp-page="Create">Create New</a>
 </p>
@@ -17,28 +14,28 @@
 	<thead>
 		<tr>
 			<th>
-				@Html.DisplayNameFor(model => model.Item[0].UserId)
+				@Html.DisplayNameFor(model => model.UserProduct[0].User.Email)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.Item[0].Description)
+				@Html.DisplayNameFor(model => model.UserProduct[0].Product.Name)
 			</th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-		@foreach (var item in Model.Item)
+		@foreach (var up in Model.UserProduct)
 		{
 			<tr>
 				<td>
-					@Html.DisplayFor(modelItem => item.Name)
+					@Html.DisplayFor(modelItem => up.User.Email)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.Description)
+					@Html.DisplayFor(modelItem => up.Product.Name)
 				</td>
 				<td>
-					<a asp-page="./Edit" asp-route-id="@item.ItemId">Edit</a> |
-					<a asp-page="./Details" asp-route-id="@item.ItemId">Details</a> |
-					<a asp-page="./Delete" asp-route-id="@item.ItemId">Delete</a>
+					@*<a asp-page="./Edit" asp-route-id="@item.ItemId">Edit</a> |
+					<a asp-page="./Details" asp-route-id="@item.ItemId">Details</a> |*@
+					<a asp-page="./Delete" id-userId="@up.ProductId" id-productId="@up.UserId">Delete</a>
 				</td>
 			</tr>
 		}
