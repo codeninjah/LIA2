@@ -14,5 +14,6 @@ namespace LIA.Data.Data
         DbSet<ItemType> ItemTypes { get; set; }
         DbSet<ListItem> ListItems { get; set; }
         DbSet<UserProduct> UserProducts { get; set; }
+		DbSet<User> Users { get; set; }
     }
 }

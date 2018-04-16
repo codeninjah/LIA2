@@ -13,6 +13,7 @@ using LIA.Admin.Data;
 using LIA.Admin.Services;
 using LIA.Data.Services;
 using LIA.Data.Data;
+using LIA2Version3.Data.Entities;
 
 namespace LIA.Admin
 {
@@ -31,7 +32,7 @@ namespace LIA.Admin
             services.AddDbContext<VideoContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<VideoContext>()
                 .AddDefaultTokenProviders();
 

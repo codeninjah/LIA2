@@ -16,7 +16,7 @@ namespace LIA.Data.Data
         public DbSet<ItemType> ItemTypes { get; set; }
         public DbSet<ListItem> ListItems { get; set; }
         public DbSet<UserProduct> UserProducts { get; set; }
-        //public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public VideoContext(DbContextOptions<VideoContext> options) : base(options)
         {
