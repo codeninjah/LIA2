@@ -30,9 +30,9 @@ namespace LIA.Admin.Pages.UserProducts
 		[BindProperty]
 		public UserProduct UserProduct { get; set; }
 
-		public void  OnGet(int productId, string userId)
+		public void  OnGet(string userid, int productid)
 		{
-			_reader.Get<UserProduct>(userId, productId);
+			var test = _reader.Get(userid);
 		}
 
 		public async Task<IActionResult> OnPostAsync(int? id)
